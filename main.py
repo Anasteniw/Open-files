@@ -1,34 +1,34 @@
 
 # Задача №1
 
-# cook_book = {}
-# with open('recipes.txt', 'rt', encoding= "utf8") as file:
-#     for d in file:
-#         dish = d.strip()
-#         ingredients = []
-#         ingredients_items = file.readline()
-#         for i in range(int(ingredients_items)):
-#             index = file.readline()
-#             ingredient_name, quantity, measure = index.strip().split(' | ')
-#             ingredients.append({"ingredient_name": ingredient_name, "quantity" : quantity, "measure" : measure})
-#         blank_dishes = file.readline()
-#         cook_book.update({dish : ingredients})
-# print(cook_book)
+cook_book = {}
+with open('recipes.txt', 'rt', encoding= "utf8") as file:
+    for d in file:
+        dish = d.strip()
+        ingredients = []
+        ingredients_items = file.readline()
+        for i in range(int(ingredients_items)):
+            index = file.readline()
+            ingredient_name, quantity, measure = index.strip().split(' | ')
+            ingredients.append({"ingredient_name": ingredient_name, "quantity" : quantity, "measure" : measure})
+        blank_dishes = file.readline()
+        cook_book.update({dish : ingredients})
+print(cook_book)
 
 
-# # Задача №2
+# Задача №2
 
-# dishes = list(cook_book.keys())
-# person_count = int(input('Введите количество персон - '))
-# def get_shop_list_by_dishes(dishes, person_count):
-#     shop_list = {}
-#     for dish in dishes:
-#         for products in cook_book[dish]:
-#             amount_products = int(products['quantity']) * person_count
-#             res = {products['ingredient_name']: {'measure': products['measure'], 'quantity':  amount_products}}
-#             shop_list.update(res)
-#     return shop_list
-# print(get_shop_list_by_dishes(dishes, person_count))
+dishes = list(cook_book.keys())
+person_count = int(input('Введите количество персон - '))
+def get_shop_list_by_dishes(dishes, person_count):
+    shop_list = {}
+    for dish in dishes:
+        for products in cook_book[dish]:
+            amount_products = int(products['quantity']) * person_count
+            res = {products['ingredient_name']: {'measure': products['measure'], 'quantity':  amount_products}}
+            shop_list.update(res)
+    return shop_list
+print(get_shop_list_by_dishes(dishes, person_count))
     
 
 
